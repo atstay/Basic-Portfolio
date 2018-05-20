@@ -36,14 +36,27 @@ h1 {
 h2 {
   font-family: 'Georgia', Times, Times New Roman, serif;
   color: #4aaaa5;
-  font-size: 40px;
+  font-size: 30px;
   padding-top: 30px;
   padding-bottom: 25px;
+  font-weight: bold;
 }
 
 h3 {
-  color: #777777;
-  font-family: Georgia, 'Times New Roman', Times, serif
+  font-family: 'Georgia', Times, Times New Roman, serif;
+  color: #ffffff;
+  background-color: #4aaaa5;
+  height: 100px;
+  float: left;
+  font-size: 30px;
+  padding-left: 33px;
+  margin-left: 133px;
+  width: 375px;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: bold;
+  line-height: 90px;
+  float: left;
 }
 
 .topnav {
@@ -79,7 +92,13 @@ p {
   padding-left: 25px;
   padding-bottom:25px;
   padding-right:25px;
+  height: 100%;
 }
+
+.clearfix {
+  overflow: auto;
+}
+
 
 hr {
   border: 1px solid #cccccc;
@@ -99,8 +118,10 @@ footer {
   padding-bottom: 10px;
 }
 
-.textarea {
-  width: auto 0px;
+textarea {
+  width: auto;
+  color:#666666;
+  text-align: left
 }
 
 .rotateimg90 {
@@ -123,15 +144,18 @@ footer {
 }
 
 img {
-  padding-top: 25px;
-  padding-right:25px;
+  padding-top: 5px;
+  padding-right:5px;
+  float: left;
 }
 #navsplit{
   border-right:solid #cccccc 5px;
 }
 .img2{
-  padding-top: 25px;
+  padding-top: 50px;
   padding-right:25px;
+  z-index: -1;
+  
 }
 .contact{
   color:darkgrey;
