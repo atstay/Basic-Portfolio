@@ -3857,7 +3857,7 @@ div:hover>h3>.icon-header {
 }
 
 .main-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.35)), url(../img/BMW-M8-GTE2.jpg) center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.35)), url(../img/lakes.jpg) center center;
     background-size: cover;
     box-shadow: inset 0 0.5rem 5rem rgba(0, 0, 0, 0.75);
     height: 100vh;
@@ -4075,7 +4075,7 @@ div:hover>h3>.icon-header {
 }
 
 .about-me .bg-me {
-    background-image: url(../img/Rafa.jpg);
+    background-image: url(../img/Me.jpg);
     height: 20rem;
     margin-bottom: 2rem
 }
@@ -4088,7 +4088,7 @@ div:hover>h3>.icon-header {
 }
 
 .about-me .bg-whatido {
-    background-image: url(../img/codePicture.jpeg);
+    background-image: url(../img/coding.jpeg);
     height: 25rem;
     margin-bottom: -10rem
 }
