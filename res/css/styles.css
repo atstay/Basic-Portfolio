@@ -4163,7 +4163,7 @@ div:hover>h3>.icon-header {
     margin-left: -20px
 }
 
-@media (min-width: 768px) {
+@media (min-width: 997px) {
     .tools .libs-showcase {
         display: block
     }
@@ -4175,12 +4175,27 @@ div:hover>h3>.icon-header {
     float: none
 }
 
-.tools .libs-showcase li:nth-child(3) {
-    width: 30%;
+.tools .libs-showcase li:nth-child(2) {
+    width: 12%;
     padding: 1.8rem 0
 }
 
-@media (min-width: 992px) {
+.tools .libs-showcase li:nth-child(3) {
+    width: 15%;
+    padding: 1.8rem 0
+}
+
+.tools .libs-showcase li:nth-child(5) {
+    width: 12%;
+    padding: 1.8rem 0
+}
+
+.tools .libs-showcase li:nth-child(6) {
+    width: 15%;
+    padding: 1.8rem 0
+}
+
+@media (min-width: 100000px) {
     .tools .libs-showcase li:nth-child(3) {
         padding: 2.5rem 0
     }
