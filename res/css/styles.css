@@ -3770,7 +3770,7 @@ div:hover>h3>.icon-header {
 }
 
 .social-nav {
-    position: absolute;
+    position: relative;
     top: 85%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
@@ -3783,7 +3783,7 @@ div:hover>h3>.icon-header {
 
 @media (min-width: 768px) {
     .social-nav {
-        position: absolute;
+        position: relative;
         top: 63%;
         left: 50%;
         -webkit-transform: translate(-50%, -50%);

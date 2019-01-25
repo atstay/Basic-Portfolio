@@ -34,30 +34,30 @@ $desktop-width: 992px;
 $large-desktop-width: 1200px;
 
 @mixin mq-tablet {
-  @media (min-width: #{$tablet-width}) {
-    @content;
-  }
+    @media (min-width: #{$tablet-width}) {
+        @content;
+    }
 }
 
 @mixin mq-desktop {
-  @media (min-width: #{$desktop-width}) {
-    @content;
-  }
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
 }
 
 @mixin mq-large-desktop {
-  @media (min-width: #{$large-desktop-width}) {
-    @content;
-  }
+    @media (min-width: #{$large-desktop-width}) {
+        @content;
+    }
 }
 
 //positional mixins
 @mixin absolute-center($top:auto, $left:auto) {
-    position:absolute;
-    top:$top;
-    left:$left;
-    -webkit-transform:translate(-50%, -50%);
-    transform:translate(-50%, -50%);
+    position: absolute;
+    top: $top;
+    left: $left;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 //layout mixins
@@ -68,7 +68,10 @@ $large-desktop-width: 1200px;
     margin-left: $leftMargin;
     line-height: 0;
 
-    @include mq-tablet { font-size: $size - 50; margin-left: $leftMargin + 7; }
+    @include mq-tablet {
+        font-size: $size - 50;
+        margin-left: $leftMargin + 7;
+    }
 }
 
 //placeholders
@@ -82,11 +85,16 @@ $large-desktop-width: 1200px;
                 LAYOUT
 *******************************************/
 //generic
-html, body {
+html,
+body {
     color: $colorBlack;
     font-family: 'Lato', Arial;
     font-size: 14px;
-    @include mq-tablet { font-size: 16px; }
+
+    @include mq-tablet {
+        font-size: 16px;
+    }
+
     text-rendering: optimizeLegibility;
 }
 
@@ -94,13 +102,16 @@ html, body {
     background-color: $colorMain;
     color: white;
 }
+
 ::-moz-selection {
     background-color: $colorMain;
     color: white;
 }
 
 //headers (h1-h6)
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: 300;
     text-transform: uppercase;
 }
@@ -117,7 +128,9 @@ h1 {
         white-space: nowrap;
     }
 
-    &:after { @include afterDot(200%, -5px); }
+    &:after {
+        @include afterDot(200%, -5px);
+    }
 }
 
 h2 {
@@ -170,7 +183,11 @@ h4 {
 }
 
 //links
-a:link, a:active, a:hover, a:visited, a:focus {
+a:link,
+a:active,
+a:hover,
+a:visited,
+a:focus {
     outline: 0;
 }
 
@@ -195,7 +212,10 @@ input:focus {
     outline: 0;
 }
 
-.contact, .portfolio, .about-me, .tools {
+.contact,
+.portfolio,
+.about-me,
+.tools {
     @include mq-tablet {
         padding: 3rem 0;
     }
@@ -235,7 +255,7 @@ input:focus {
     }
 
     &:focus {
-        box-shadow: inset 0 0 5px rgba(0,0,0,0.75);
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.75);
     }
 }
 
@@ -252,8 +272,8 @@ input:focus {
     text-align: center;
 }
 
-section:hover > h3 > .icon-header,
-div:hover > h3 > .icon-header {
+section:hover>h3>.icon-header,
+div:hover>h3>.icon-header {
     @include transform(translateY(-15%) rotate(-10deg) scale(1.15));
 }
 
@@ -294,11 +314,12 @@ div:hover > h3 > .icon-header {
 
     @include keyframes(loading) {
         from {
-            @include transform(scale(0.2,0.25));
+            @include transform(scale(0.2, 0.25));
             background-color: white;
         }
+
         to {
-            @include transform(scale(0.1,2));
+            @include transform(scale(0.1, 2));
             background-color: $colorMain;
         }
     }
@@ -333,89 +354,22 @@ div:hover > h3 > .icon-header {
 }
 
 @include keyframes(caretFade) {
-  from {
+    from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
     }
 }
 
-/*******************************************
-               NAVIGATIONS
-*******************************************/
-.social-nav {
-    @include absolute-center(85%, 50%);
-    overflow: hidden;
-    text-align: center;
-    width: 100%;
-    z-index: 3;
 
-    @include mq-tablet {
-        @include absolute-center(63%, 50%);
-    }
-
-    li {
-        display: inline-block;
-        font-size: 150%;
-        margin: 0 0.5rem;
-
-        span {
-            @include absolute-center(50%, 50%);
-        }
-
-        .social-btn, .social-btn:focus {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
-            width: 2.5rem;
-            height: 2.5rem;
-            transition: all 0.25s;
-
-            &:hover {
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-            }
-        }
-
-        .social-fb {
-            @extend .social-btn;
-            &:hover {
-                background-color: $colorFb;
-                border-color: $colorFb;
-            }
-        }
-
-        .social-linkedin {
-            @extend .social-btn;
-            &:hover {
-                background-color: $colorLinkedin;
-                border-color: $colorLinkedin;
-            }
-        }
-
-        .social-github {
-            @extend .social-btn;
-            &:hover {
-                background-color: $colorGithub;
-                border-color: $colorGithub;
-            }
-        }
-
-        .social-email {
-            @extend .social-btn;
-            &:hover {
-                background-color: $colorMain;
-                border-color: $colorMain;
-            }
-        }
-    }
-}
 
 /*******************************************
                 HEADER
 *******************************************/
 .main-header {
-    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.35)), url(../img/header_bg.jpg) center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.35)), url(../img/header_bg.jpg) center center;
     background-size: cover;
     box-shadow: inset 0 0.5rem 5rem rgba(0, 0, 0, 0.75);
     height: 100vh;
@@ -425,17 +379,22 @@ div:hover > h3 > .icon-header {
     .navbar.navbar-sticky {
         background-color: white;
         box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-		top: -0.75rem !important;
-		margin-top: auto !important;
+        top: -0.75rem !important;
+        margin-top: auto !important;
         position: fixed;
 
         .nav-link {
             color: $colorBlack;
         }
 
-		//In sticky nav display only dark logo
-		.logo-white { display: none !important; }
-		.logo-dark { display: block !important; }
+        //In sticky nav display only dark logo
+        .logo-white {
+            display: none !important;
+        }
+
+        .logo-dark {
+            display: block !important;
+        }
     }
 
     .navbar {
@@ -444,12 +403,12 @@ div:hover > h3 > .icon-header {
         border-radius: 0;
         box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
         @include animation-duration(0.5s);
-		min-height: auto !important;
+        min-height: auto !important;
         overflow: hidden;
         margin-top: -1rem;
         position: relative;
         z-index: 5;
-		padding: 0;
+        padding: 0;
 
         @include mq-tablet {
             background-color: transparent;
@@ -461,32 +420,35 @@ div:hover > h3 > .icon-header {
         .logo {
             border: none !important;
             padding-top: 1rem !important;
-			font-size: 16px !important;
+            font-size: 16px !important;
+
             &:hover {
                 color: $colorBlack;
             }
         }
 
-		.logo-img {
-			float: left;
-			margin: -0.75rem 0.75rem 0 0;
-			width: 42px;
-			height: 42px;
-		}
+        .logo-img {
+            float: left;
+            margin: -0.75rem 0.75rem 0 0;
+            width: 42px;
+            height: 42px;
+        }
 
-		.logo-white {
-			display: none;
-			@include mq-tablet {
-				display: block;
-			}
-		}
+        .logo-white {
+            display: none;
 
-		.logo-dark {
-			display: block;
-			@include mq-tablet {
-				display: none;
-			}
-		}
+            @include mq-tablet {
+                display: block;
+            }
+        }
+
+        .logo-dark {
+            display: block;
+
+            @include mq-tablet {
+                display: none;
+            }
+        }
 
         .nav-link {
             background-color: transparent;
@@ -497,11 +459,11 @@ div:hover > h3 > .icon-header {
             letter-spacing: 0.05rem;
             padding: 0.75rem;
             text-transform: uppercase;
-			transition: color 0.25s;
+            transition: color 0.25s;
 
-			&:hover {
-				color: $colorMain;
-			}
+            &:hover {
+                color: $colorMain;
+            }
 
             @include mq-tablet {
                 border: none;
@@ -529,7 +491,9 @@ div:hover > h3 > .icon-header {
                 color: $colorMain;
             }
 
-            @include mq-tablet { display: none; }
+            @include mq-tablet {
+                display: none;
+            }
         }
 
         //Bootstrap overrides for mobile nav (extended)
@@ -537,11 +501,21 @@ div:hover > h3 > .icon-header {
             margin-bottom: 0;
             margin-top: 0;
 
-            li { @include mq-tablet { margin-top: 6px; } }
-            li.active a { color: $colorMain !important; } //scrollspy
+            li {
+                @include mq-tablet {
+                    margin-top: 6px;
+                }
+            }
+
+            li.active a {
+                color: $colorMain !important;
+            }
+
+            //scrollspy
         }
 
-        .collapse, .collapsing {
+        .collapse,
+        .collapsing {
             border: none;
         }
     }
@@ -705,14 +679,17 @@ div:hover > h3 > .icon-header {
         li:nth-child(3) {
             width: 30%;
             padding: 1.8rem 0;
+
             @include mq-desktop {
                 padding: 2.5rem 0;
             }
         }
+
         //Bootstrap logo positioning
         li:nth-child(4) {
             padding: 1.25rem;
         }
+
         // //Gimp logo positioning
         // li:nth-child(5) {
         //     padding-top: 0.7rem;
@@ -720,6 +697,7 @@ div:hover > h3 > .icon-header {
 
         img {
             width: 100%;
+
             @include mq-tablet {
                 padding: 1rem;
             }
@@ -732,12 +710,14 @@ div:hover > h3 > .icon-header {
 *******************************************/
 
 .portfolio {
+
     //portfolio navigation
     .portfolio-nav {
         display: block;
         width: 22rem;
         margin: 0 auto;
         text-align: center;
+
         @include mq-tablet {
             width: 28rem;
         }
@@ -774,11 +754,11 @@ div:hover > h3 > .icon-header {
     //showcase
     .showcase-container {
         margin-top: 2rem;
-		margin-bottom: 1rem;
+        margin-bottom: 1rem;
 
-		@include mq-large-desktop {
-			transition: height 0.5s ease-out;
-		}
+        @include mq-large-desktop {
+            transition: height 0.5s ease-out;
+        }
 
         //filteredout z-index
         .filteredOut {
@@ -796,14 +776,17 @@ div:hover > h3 > .icon-header {
                 font-size: 100%;
             }
 
-            a:link, a:active, a:hover, a:visited {
+            a:link,
+            a:active,
+            a:hover,
+            a:visited {
                 color: white;
-				text-decoration: none;
+                text-decoration: none;
             }
 
             .showcase-img {
                 cursor: pointer;
-				box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+                box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
             }
 
             .item-desc {
@@ -811,13 +794,13 @@ div:hover > h3 > .icon-header {
                 background-color: transparent;
                 cursor: pointer;
                 opacity: 0;
-				padding: 1rem;
+                padding: 1rem;
                 position: absolute;
                 transition: all 0.25s;
                 top: 0.9rem;
-				left: 1rem;
-				right: 1rem;
-				bottom: 0.9rem;
+                left: 1rem;
+                right: 1rem;
+                bottom: 0.9rem;
             }
 
             .button {
@@ -851,6 +834,7 @@ div:hover > h3 > .icon-header {
                 }
             }
         }
+
         .showcase-item:hover .item-desc {
             @include transform(scaleY(1));
             background-color: rgba(0, 0, 0, 0.75);
@@ -874,7 +858,8 @@ div:hover > h3 > .icon-header {
         margin: 1rem;
     }
 
-    input, textarea {
+    input,
+    textarea {
         background-color: $colorLightBlack;
         border: 1px solid $colorDarkBlack;
         color: white;
@@ -888,12 +873,88 @@ div:hover > h3 > .icon-header {
         }
     }
 
-    input:focus, textarea:focus {
+    input:focus,
+    textarea:focus {
         border: 1px solid $colorMain;
     }
 
     #form-msg {
         height: 8rem;
+    }
+}
+
+/*******************************************
+               NAVIGATIONS
+*******************************************/
+.social-nav {
+    @include absolute-center(85%, 50%);
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    z-index: 3;
+
+    @include mq-tablet {
+        @include absolute-center(63%, 50%);
+    }
+
+    li {
+        display: inline-block;
+        font-size: 150%;
+        margin: 0 0.5rem;
+
+        span {
+            @include absolute-center(50%, 50%);
+        }
+
+        .social-btn,
+        .social-btn:focus {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            width: 2.5rem;
+            height: 2.5rem;
+            transition: all 0.25s;
+
+            &:hover {
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .social-fb {
+            @extend .social-btn;
+
+            &:hover {
+                background-color: $colorFb;
+                border-color: $colorFb;
+            }
+        }
+
+        .social-linkedin {
+            @extend .social-btn;
+
+            &:hover {
+                background-color: $colorLinkedin;
+                border-color: $colorLinkedin;
+            }
+        }
+
+        .social-github {
+            @extend .social-btn;
+
+            &:hover {
+                background-color: $colorGithub;
+                border-color: $colorGithub;
+            }
+        }
+
+        .social-email {
+            @extend .social-btn;
+
+            &:hover {
+                background-color: $colorMain;
+                border-color: $colorMain;
+            }
+        }
     }
 }
 
@@ -919,9 +980,11 @@ div:hover > h3 > .icon-header {
 #sass-logo {
     @include animation-delay(0.25s);
 }
+
 #jquery-logo {
     @include animation-delay(0.5s);
 }
+
 #bootstrap-logo {
     @include animation-delay(0.75s);
 }
