@@ -14,7 +14,7 @@
         crossorigin="anonymous">
     <link href="ext/css/ionicons.min.css" rel="stylesheet">
     <link href="res/css/styles.css" rel="stylesheet">
-
+    <meta name="referrer" content="origin">
    
 </head>
 
@@ -303,12 +303,12 @@
                 <h2>Get in touch</h2>
             </div>
             <div class="row">
-                <form id="contact-form" method="post" action="http://formspree.io/atstay@gmail.com">
+                <form id="contact-form" method="POST" action="http://formspree.io/atstay@gmail.com">
                     <div class="row">
                         <input name="form-name" id="form-name" type="text" placeholder="your name" required>
                     </div>
                     <div class="row">
-                        <input name="form-email" id="form-email" type="email" placeholder="your email" required>
+                        <input name="_replyto" id="form-email" type="email" placeholder="your email" required>
                     </div>
                     <div class="row">
                         <textarea name="form-msg" id="form-msg" placeholder="your message" required></textarea>
