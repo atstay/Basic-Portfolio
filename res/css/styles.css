@@ -3504,6 +3504,12 @@ h4:after {
     margin: 10px auto 0 auto
 }
 
+h5 {
+    color: white;
+    font-size: 250%;
+    letter-spacing: 0.25rem
+}
+
 a:link,
 a:active,
 a:hover,
@@ -4077,8 +4083,8 @@ div:hover>h3>.icon-header {
 
 .about-me .bg-me {
     background-image: url(../img/Me.jpg);
-    height: 20rem;
-    margin-bottom: 2rem
+    height: 100rem;
+    margin-bottom: -10rem
 }
 
 @media (min-width: 992px) {
@@ -4096,7 +4102,7 @@ div:hover>h3>.icon-header {
 
 .about-me .bg-facts {
     background-image: url(../img/school.jpg);
-    height: 28rem;
+    height: 25rem;
     margin-bottom: -10rem
 }
 

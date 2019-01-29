@@ -182,6 +182,12 @@ h4 {
     }
 }
 
+h5 {
+    color: white;
+    font-size: 250%;
+    letter-spacing: 0.25rem;
+}
+
 //links
 a:link,
 a:active,
@@ -580,7 +586,7 @@ div:hover>h3>.icon-header {
 
     .bg-me {
         @extend %featBG;
-        background-image: url(../img/yiotis_lgbysea.jpg);
+        background-image: url(../img/me.jpg);
         height: 25rem;
         margin-bottom: 2rem;
 

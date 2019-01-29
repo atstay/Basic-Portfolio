@@ -124,6 +124,11 @@ $(window).load(function() {
 
   //typewriter
   $(".welcome-box p").type(function() {
+    $(".welcome-box h5").animate({ opacity: 1 }, 2000, function() {
+      $(".social-nav ul")
+        .removeClass("invisible")
+        .addClass("animated flipInX");
+    });
     $(".welcome-box h1").animate({ opacity: 1 }, 2000, function() {
       $(".social-nav ul")
         .removeClass("invisible")
