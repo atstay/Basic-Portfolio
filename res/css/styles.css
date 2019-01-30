@@ -4076,8 +4076,8 @@ div:hover>h3>.icon-header {
 
 .about-me .bg-me {
     background-image: url(../img/Me.jpg);
-    height: 100rem;
-    margin-bottom: -10rem
+    height: 1000rem;
+    margin-bottom: -1000000rem
 }
 
 @media (min-width: 992px) {
